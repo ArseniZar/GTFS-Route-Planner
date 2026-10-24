@@ -1,0 +1,384 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "GTFS | AB | Parametry",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "${input:startStop}",
+        "${input:endStop}",
+        "${input:criterion}",
+        "${input:startTime}",
+        "--mode",
+        "ab",
+        "--max-waiting",
+        "${input:maxWaiting}",
+        "--variant",
+        "${input:abVariant}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | AB | Dijkstra | Czas",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413100",
+        "t",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "ab",
+        "--max-waiting",
+        "3600",
+        "--variant",
+        "dijkstra"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | AB | A* | Czas",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413100",
+        "t",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "ab",
+        "--max-waiting",
+        "3600",
+        "--variant",
+        "astar"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | AB | A* | Przesiadki",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413100",
+        "p",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "ab",
+        "--max-waiting",
+        "3600",
+        "--variant",
+        "astar"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | Cycle | Parametry (Tabu)",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "${input:startStop}",
+        "${input:visitList}",
+        "${input:criterion}",
+        "${input:startTime}",
+        "--mode",
+        "cycle",
+        "--variant",
+        "${input:tabuVariant}",
+        "--iterations",
+        "${input:iterations}",
+        "--max-waiting",
+        "${input:maxWaiting}"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | Cycle | Tabu basic | Czas | 5 stopow",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413426;1413380;1413332;1413100;1413387",
+        "t",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "cycle",
+        "--variant",
+        "basic",
+        "--iterations",
+        "80",
+        "--max-waiting",
+        "3600"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | Cycle | Tabu variable_tenure | Czas | 5 stopow",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413426;1413380;1413332;1413100;1413387",
+        "t",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "cycle",
+        "--variant",
+        "variable_tenure",
+        "--iterations",
+        "80",
+        "--max-waiting",
+        "3600"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | Cycle | Tabu aspiration | Czas | 5 stopow",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413426;1413380;1413332;1413100;1413387",
+        "t",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "cycle",
+        "--variant",
+        "aspiration",
+        "--iterations",
+        "80",
+        "--max-waiting",
+        "3600"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | Cycle | Tabu adaptive | Czas | 5 stopow",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413426;1413380;1413332;1413100;1413387",
+        "t",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "cycle",
+        "--variant",
+        "adaptive",
+        "--iterations",
+        "80",
+        "--max-waiting",
+        "3600"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | Cycle | Tabu basic | Przesiadki | 5 stopow",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413426;1413380;1413332;1413100;1413387",
+        "p",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "cycle",
+        "--variant",
+        "basic",
+        "--iterations",
+        "80",
+        "--max-waiting",
+        "3600"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | Cycle | Tabu variable_tenure | Przesiadki | 5 stopow",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413426;1413380;1413332;1413100;1413387",
+        "p",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "cycle",
+        "--variant",
+        "variable_tenure",
+        "--iterations",
+        "80",
+        "--max-waiting",
+        "3600"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | Cycle | Tabu aspiration | Przesiadki | 5 stopow",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413426;1413380;1413332;1413100;1413387",
+        "p",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "cycle",
+        "--variant",
+        "aspiration",
+        "--iterations",
+        "80",
+        "--max-waiting",
+        "3600"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "GTFS | Cycle | Tabu adaptive | Przesiadki | 5 stopow",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": [
+        "${workspaceFolder}/main.py",
+        "1413380",
+        "1413426;1413380;1413332;1413100;1413387",
+        "p",
+        "2026-03-26 07:00:00",
+        "--mode",
+        "cycle",
+        "--variant",
+        "adaptive",
+        "--iterations",
+        "80",
+        "--max-waiting",
+        "3600"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "startStop",
+      "type": "promptString",
+      "description": "Przystanek poczatkowy A (ID)",
+      "default": "1413380"
+    },
+    {
+      "id": "endStop",
+      "type": "promptString",
+      "description": "Przystanek koncowy B (ID)",
+      "default": "1413387"
+    },
+    {
+      "id": "visitList",
+      "type": "promptString",
+      "description": "Lista przystankow L oddzielona srednikiem",
+      "default": "1413426;1413380;1413332;1413100;1413387"
+    },
+    {
+      "id": "criterion",
+      "type": "pickString",
+      "description": "Kryterium optymalizacji",
+      "options": [
+        "t",
+        "p"
+      ],
+      "default": "t"
+    },
+    {
+      "id": "startTime",
+      "type": "promptString",
+      "description": "Czas startu (YYYY-MM-DD HH:MM:SS)",
+      "default": "2026-03-26 07:00:00"
+    },
+    {
+      "id": "abVariant",
+      "type": "pickString",
+      "description": "Algorytm dla trybu A->B",
+      "options": [
+        "dijkstra",
+        "astar"
+      ],
+      "default": "dijkstra"
+    },
+    {
+      "id": "tabuVariant",
+      "type": "pickString",
+      "description": "Wariant Tabu Search",
+      "options": [
+        "basic",
+        "variable_tenure",
+        "aspiration",
+        "adaptive"
+      ],
+      "default": "basic"
+    },
+    {
+      "id": "iterations",
+      "type": "promptString",
+      "description": "Liczba iteracji Tabu Search",
+      "default": "80"
+    },
+    {
+      "id": "maxWaiting",
+      "type": "promptString",
+      "description": "Maksymalny czas oczekiwania na przesiadke (sekundy)",
+      "default": "3600"
+    }
+  ]
+}
